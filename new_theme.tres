@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://bjlk20yrl71mh"]
+
+[resource]
+TabBar/colors/font_outline_color = Color(0.61, 0.61, 0.61, 1)
+TabBar/constants/h_separation = 39

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cla62igb37v6"]
+
+[ext_resource type="Script" uid="uid://dfrvyvt87jsg4" path="res://assets/abilities/skyfall.gd" id="1_xfc45"]
+[ext_resource type="SpriteFrames" uid="uid://6w6cho5qnrav" path="res://scenes/playerThings.tres" id="2_h58gw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amlf6"]
+size = Vector2(36, 34)
+
+[node name="Skyfall" type="Node2D"]
+script = ExtResource("1_xfc45")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = 10
+z_as_relative = false
+sprite_frames = ExtResource("2_h58gw")
+animation = &"Skyfall"
+frame = 20
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/Area2D"]
+shape = SubResource("RectangleShape2D_amlf6")
+
+[connection signal="area_entered" from="AnimatedSprite2D2/Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="AnimatedSprite2D2/Area2D" to="." method="_on_area_2d_area_exited"]
