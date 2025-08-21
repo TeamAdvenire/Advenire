@@ -1,0 +1,161 @@
+[gd_scene load_steps=13 format=3 uid="uid://t043ishwi2hj"]
+
+[ext_resource type="Script" uid="uid://8g6kynedfxe7" path="res://assets/UI/health_bar.gd" id="1_ccbmr"]
+[ext_resource type="Shader" uid="uid://dttn4aunytnl1" path="res://assets/UI/health_bar.gdshader" id="1_fmdq2"]
+[ext_resource type="Texture2D" uid="uid://duq7plsvd3api" path="res://assets/UI/HP.png" id="1_ht1qf"]
+[ext_resource type="Texture2D" uid="uid://b8q0lu4wp04j8" path="res://assets/UI/HealthBarStubbs/Left/full_left.tres" id="2_dxvh2"]
+[ext_resource type="Texture2D" uid="uid://ukswk8sewns6" path="res://assets/UI/HealthBarStubbs/Middle/full_middle.tres" id="4_t86ia"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ey1sf"]
+shader = ExtResource("1_fmdq2")
+shader_parameter/flashColor = Color(1, 1, 1, 1)
+shader_parameter/flashAmmount = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w27gb"]
+atlas = ExtResource("1_ht1qf")
+region = Rect2(7, 72, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbexp"]
+atlas = ExtResource("1_ht1qf")
+region = Rect2(1, 15, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug34o"]
+atlas = ExtResource("1_ht1qf")
+region = Rect2(1, 29, 12, 13)
+
+[sub_resource type="Animation" id="Animation_6v08n"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flashAmmount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8p2bk"]
+resource_name = "damageFlash"
+length = 0.9
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flashAmmount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.533333, 1, 0.25, 0),
+"times": PackedFloat32Array(0, 0.866667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2vmqj"]
+_data = {
+&"RESET": SubResource("Animation_6v08n"),
+&"damageFlash": SubResource("Animation_8p2bk")
+}
+
+[node name="HealthBar" type="HBoxContainer"]
+material = SubResource("ShaderMaterial_ey1sf")
+offset_right = 123.0
+offset_bottom = 13.0
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("1_ccbmr")
+value = 10.0
+
+[node name="Heart" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_w27gb")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_dxvh2")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_rbexp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_rbexp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_rbexp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_rbexp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_rbexp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_rbexp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_rbexp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_t86ia")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect10" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_ug34o")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2vmqj")
+}

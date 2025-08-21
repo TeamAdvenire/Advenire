@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpk8inftv4474"]
+
+[ext_resource type="Script" uid="uid://gwwewcsf452k" path="res://assets/UI/weapon_row.gd" id="1_rbwvp"]
+[ext_resource type="Texture2D" uid="uid://bsm7syveixf1i" path="res://assets/items/Food/Bread alt.png" id="2_78t7b"]
+
+[node name="WeaponRow" type="ColorRect"]
+custom_minimum_size = Vector2(1000, 80)
+offset_right = 1000.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 0.180392)
+script = ExtResource("1_rbwvp")
+
+[node name="Title" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(1000, 60)
+layout_mode = 2
+offset_top = 14.0
+offset_right = 1000.0
+offset_bottom = 74.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[center]Description of said item[/center]
+"
+scroll_active = false
+
+[node name="Texture" type="TextureRect" parent="Title"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = -26.0
+offset_right = 285.0
+offset_bottom = 83.0
+texture = ExtResource("2_78t7b")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Equipped?" type="RichTextLabel" parent="Title"]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 2.0
+offset_right = 1000.0
+offset_bottom = 62.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[Equipped]"
+scroll_active = false
+
+[node name="Line" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+offset_top = 84.0
+offset_right = 1000.0
+offset_bottom = 87.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1003.0
+offset_bottom = 84.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="onPressed"]

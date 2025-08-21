@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhg5ggm4o1b5q"]
+
+[ext_resource type="Script" uid="uid://btosrmlut1bcd" path="res://assets/UI/magic_screen.gd" id="1_tng53"]
+[ext_resource type="Texture2D" uid="uid://b4q0mjf4340bo" path="res://assets/UI/MagicScreenAssets/Magic_Full.png" id="2_e68or"]
+[ext_resource type="Texture2D" uid="uid://cf5a7tcoii421" path="res://assets/UI/MagicScreenAssets/ChaosTitle.tres" id="4_tx3w7"]
+[ext_resource type="PackedScene" uid="uid://dflo0n62jayjy" path="res://assets/UI/MagicScreenAssets/magic_row.tscn" id="5_4b1qf"]
+[ext_resource type="Texture2D" uid="uid://dcww62fymmghx" path="res://assets/UI/MagicScreenAssets/backgroundBox.tres" id="5_u7gmb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aap26"]
+atlas = ExtResource("2_e68or")
+region = Rect2(1, 1, 95, 108)
+
+[node name="MagicScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tng53")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1916.0
+offset_bottom = 1081.0
+color = Color(0.417896, 0.417896, 0.417896, 0.360784)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = 969.0
+offset_top = 1.0
+offset_right = 1943.0
+offset_bottom = 1079.0
+texture = SubResource("AtlasTexture_aap26")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_top = 242.0
+offset_right = 907.0
+offset_bottom = 1041.0
+
+[node name="MagicRow2" parent="TextureRect/VBoxContainer" instance=ExtResource("5_4b1qf")]
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 21.0
+offset_right = 880.0
+offset_bottom = 138.0
+texture = ExtResource("4_tx3w7")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.772549)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -896.0
+offset_top = -123.0
+offset_right = -48.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_u7gmb")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 841.0
+offset_bottom = 103.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 43
+bbcode_enabled = true
+text = "[center]Use WASD to Move Press SPACE to Cast"
+vertical_alignment = 1

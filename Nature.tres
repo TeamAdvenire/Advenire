@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cpeuk27lewfec"]
+
+[ext_resource type="Texture2D" uid="uid://b4q0mjf4340bo" path="res://assets/UI/MagicScreenAssets/Magic_Full.png" id="1_rb6xa"]
+
+[resource]
+atlas = ExtResource("1_rb6xa")
+region = Rect2(104, 145, 11, 11)

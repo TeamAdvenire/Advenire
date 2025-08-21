@@ -1,0 +1,205 @@
+[gd_scene load_steps=3 format=3 uid="uid://denabtjwml6xh"]
+
+[ext_resource type="Script" uid="uid://7drs1611rnw5" path="res://scenes/main_menu.gd" id="1_ifoit"]
+[ext_resource type="Texture2D" uid="uid://cg7032tt4g808" path="res://assets/sprites/Fox/Fox_Idle.png" id="2_e76i4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Main Menu" type="CanvasLayer" parent="."]
+script = ExtResource("1_ifoit")
+firstSceneLoader = 1
+
+[node name="Main Menu View" type="Control" parent="Main Menu"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Main Menu/Main Menu View"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.358067, 0.0984, 0.41, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu/Main Menu View"]
+custom_minimum_size = Vector2(475, 150)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.5
+offset_top = 300.0
+offset_right = 237.5
+offset_bottom = 450.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "Adevenir"
+
+[node name="Play" type="Button" parent="Main Menu/Main Menu View"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 500.0
+offset_right = 118.0
+offset_bottom = 600.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="Settings" type="Button" parent="Main Menu/Main Menu View"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 650.0
+offset_right = 118.0
+offset_bottom = 750.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings
+"
+
+[node name="Credits" type="Button" parent="Main Menu/Main Menu View"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 800.0
+offset_right = 118.0
+offset_bottom = 900.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Credits
+"
+
+[node name="Credits View" type="Control" parent="Main Menu"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Main Menu/Credits View"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.358067, 0.0984, 0.41, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu/Credits View/ColorRect"]
+custom_minimum_size = Vector2(475, 150)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -237.5
+offset_top = 200.0
+offset_right = 237.5
+offset_bottom = 350.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "Credits"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu/Credits View"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 430.0
+offset_right = 1700.0
+offset_bottom = 1022.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Art and Design - Myles F Nieland
+Story and Worldbuilding - Ishan Gottam
+Game Lead and Technical Director - Aniket Subramanian
+Developer and Software Engineer - Bryce Sechrist :)[/center]  
+
+
+
+[center]Thanks for your support!"
+
+[node name="FoxIdle" type="Sprite2D" parent="Main Menu/Credits View"]
+position = Vector2(1116, 903)
+scale = Vector2(2.71739, 2.71739)
+texture = ExtResource("2_e76i4")
+
+[node name="Button" type="Button" parent="Main Menu/Credits View"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 32.0
+offset_right = 293.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 30
+text = "<- Back [esc]"
+
+[node name="Settings View" type="Control" parent="Main Menu"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Main Menu/Settings View"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.358067, 0.0984, 0.41, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu/Settings View/ColorRect"]
+custom_minimum_size = Vector2(475, 150)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -242.0
+offset_top = 184.0
+offset_right = 233.0
+offset_bottom = 334.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 100
+text = "Settings"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu/Settings View"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 430.0
+offset_right = 1700.0
+offset_bottom = 1022.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Nothing yet, come back later!"
+
+[node name="Button" type="Button" parent="Main Menu/Settings View"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 32.0
+offset_right = 293.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 30
+text = "<- Back [esc]"
+
+[connection signal="pressed" from="Main Menu/Main Menu View/Play" to="Main Menu" method="_on_play_pressed"]
+[connection signal="pressed" from="Main Menu/Main Menu View/Settings" to="Main Menu" method="_on_settings_pressed"]
+[connection signal="pressed" from="Main Menu/Main Menu View/Credits" to="Main Menu" method="_on_credits_pressed"]
+[connection signal="pressed" from="Main Menu/Credits View/Button" to="Main Menu" method="_on_back_pressed"]
+[connection signal="pressed" from="Main Menu/Settings View/Button" to="Main Menu" method="_on_back_pressed"]

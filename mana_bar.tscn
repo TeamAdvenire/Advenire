@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://olwuohru2yt0"]
+
+[ext_resource type="Script" uid="uid://wbmtex7xp6uj" path="res://assets/UI/manaBar.gd" id="1_82nrk"]
+[ext_resource type="Texture2D" uid="uid://d2l8g0npcek2" path="res://assets/UI/ManaBarStubbs/MP Star.png" id="2_nl5td"]
+[ext_resource type="Texture2D" uid="uid://cwkqkhvwwk0yh" path="res://assets/UI/ManaBarStubbs/Left/MP_00.png" id="3_niybo"]
+[ext_resource type="Texture2D" uid="uid://bh8wqc2fq5445" path="res://assets/UI/ManaBarStubbs/Middle/MP_12.png" id="4_wwrqu"]
+[ext_resource type="Texture2D" uid="uid://bbnpis40llg7f" path="res://assets/UI/ManaBarStubbs/End/MP_24.png" id="5_yckww"]
+
+[node name="ManaBar" type="HBoxContainer"]
+offset_left = 1274.0
+offset_top = 25.0
+offset_right = 2613.0
+offset_bottom = 120.0
+theme_override_constants/separation = 0
+script = ExtResource("1_82nrk")
+
+[node name="Heart" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_nl5td")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_niybo")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_wwrqu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect10" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_yckww")
+expand_mode = 2
+stretch_mode = 4

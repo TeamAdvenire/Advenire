@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmnscuvwu83j1"]
+
+[ext_resource type="Theme" uid="uid://bjlk20yrl71mh" path="res://new_theme.tres" id="1_1v7df"]
+[ext_resource type="Script" uid="uid://dnltm8a47hsap" path="res://assets/UI/equipment.gd" id="1_6x4ga"]
+[ext_resource type="Texture2D" uid="uid://c3mpws33rprgo" path="res://assets/items/Weapon/IronBroadsword.png" id="2_ni8l1"]
+[ext_resource type="Texture2D" uid="uid://grlg01ewn0dr" path="res://assets/items/Weapon/IronSpear.png" id="4_nx8qh"]
+[ext_resource type="Texture2D" uid="uid://dn5cv6axma4kb" path="res://assets/items/Weapon/IronGreatsword.png" id="5_ulwir"]
+[ext_resource type="Texture2D" uid="uid://buyfo17lxdes0" path="res://assets/UI/UI Hotbar.png" id="6_6gno0"]
+
+[node name="Equipment" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.254902)
+script = ExtResource("1_6x4ga")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 121.0
+offset_right = 1855.0
+offset_bottom = 1053.0
+theme = ExtResource("1_1v7df")
+current_tab = 0
+
+[node name="Weapons" type="Control" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Tab" type="TabBar" parent="TabContainer/Weapons"]
+layout_mode = 2
+offset_left = 94.0
+offset_top = 99.0
+offset_right = 932.0
+offset_bottom = 166.0
+current_tab = 0
+tab_alignment = 1
+tab_count = 3
+tab_0/tooltip = "Broadsword"
+tab_0/icon = ExtResource("2_ni8l1")
+tab_1/tooltip = "Greatsword"
+tab_1/icon = ExtResource("5_ulwir")
+tab_2/tooltip = "Spear"
+tab_2/icon = ExtResource("4_nx8qh")
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Weapons"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 192.0
+offset_right = 1042.0
+offset_bottom = 888.0
+
+[node name="Armor" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Relics" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 712.0
+offset_right = 1831.0
+offset_bottom = 841.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1130.0
+offset_top = 214.0
+offset_right = 1529.0
+offset_bottom = 613.0
+texture = ExtResource("6_6gno0")
+stretch_mode = 4
+
+[node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 801.0
+offset_right = 1838.0
+offset_bottom = 1031.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+
+[node name="Damage" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1536.0
+offset_top = 320.0
+offset_right = 1872.0
+offset_bottom = 496.0
+theme_override_font_sizes/normal_font_size = 37
+
+[connection signal="tab_changed" from="TabContainer/Weapons/Tab" to="." method="_on_tab_tab_changed"]

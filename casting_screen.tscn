@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjgqllkbeqd7u"]
+
+[ext_resource type="Script" uid="uid://bu0nik5nweefg" path="res://assets/UI/casting_screen.gd" id="1_6g5do"]
+[ext_resource type="Texture2D" uid="uid://dcww62fymmghx" path="res://assets/UI/MagicScreenAssets/backgroundBox.tres" id="2_qqaas"]
+[ext_resource type="Texture2D" uid="uid://dm56cq6ma128c" path="res://assets/UI/MagicScreenAssets/backgroundColor.tres" id="3_5drhd"]
+[ext_resource type="Texture2D" uid="uid://do5e8v3qvtxd8" path="res://assets/UI/MagicScreenAssets/itemBackground.tres" id="4_bba42"]
+[ext_resource type="Texture2D" uid="uid://c11pgnjjfoolj" path="res://assets/magics/Fire.tres" id="5_bba42"]
+
+[node name="CastingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6g5do")
+
+[node name="Line2D" type="Line2D" parent="."]
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.772549)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -301.0
+offset_top = -104.18
+offset_right = 301.0
+offset_bottom = -27.0005
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_qqaas")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 597.0
+offset_bottom = 78.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 46
+bbcode_enabled = true
+text = "[center]Click Anywhere to Cast"
+
+[node name="ItemDesc" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.788235)
+layout_mode = 0
+offset_left = 99.0
+offset_top = 329.0
+offset_right = 530.0
+offset_bottom = 674.0
+texture = ExtResource("3_5drhd")
+
+[node name="Background" type="TextureRect" parent="ItemDesc"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 117.0
+offset_bottom = 115.0
+texture = ExtResource("4_bba42")
+
+[node name="Description" type="RichTextLabel" parent="ItemDesc"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 140.0
+offset_right = 389.0
+offset_bottom = 319.0
+theme_override_font_sizes/normal_font_size = 25
+text = "This is a decently long description of said item, just to make sure it all works. "
+
+[node name="Title" type="RichTextLabel" parent="ItemDesc"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 29.0
+offset_right = 416.0
+offset_bottom = 109.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Title (4 MP)"
+scroll_active = false
+
+[node name="InnerItem" type="TextureRect" parent="ItemDesc"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 39.0
+offset_right = 100.0
+offset_bottom = 98.0
+texture = ExtResource("5_bba42")
+
+[node name="ColorRect" type="ColorRect" parent="ItemDesc"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 110.0
+offset_right = 377.0
+offset_bottom = 115.0

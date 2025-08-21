@@ -1,0 +1,268 @@
+[gd_scene load_steps=15 format=3 uid="uid://dplf30acmg7gf"]
+
+[ext_resource type="PackedScene" uid="uid://t043ishwi2hj" path="res://assets/UI/health_bar.tscn" id="1_513jq"]
+[ext_resource type="PackedScene" uid="uid://olwuohru2yt0" path="res://assets/UI/mana_bar.tscn" id="1_yjxor"]
+[ext_resource type="Script" uid="uid://bosblulfdkq3v" path="res://assets/UI/item_pickup.gd" id="2_3ojmm"]
+[ext_resource type="Script" uid="uid://bqtsf3ldc5f2v" path="res://assets/UI/death_screen.gd" id="2_4jl5f"]
+[ext_resource type="PackedScene" uid="uid://ctke8s4kwobrv" path="res://assets/UI/inventory_screen.tscn" id="3_anldx"]
+[ext_resource type="Script" uid="uid://4sd4cqguxej7" path="res://assets/UI/rich_text_label.gd" id="5_5iaa6"]
+[ext_resource type="PackedScene" uid="uid://dmnscuvwu83j1" path="res://assets/UI/equipment.tscn" id="6_f3ofk"]
+[ext_resource type="Script" uid="uid://581faekuig0r" path="res://assets/UI/pause_menu.gd" id="6_whlxp"]
+[ext_resource type="PackedScene" uid="uid://do8chqcse4t6m" path="res://scenes/character_diologue_box.tscn" id="8_bbrbj"]
+[ext_resource type="Texture2D" uid="uid://k3fgh1yxwil0" path="res://assets/sprites/Player/Renegade_Death3 (1).png" id="9_u7nva"]
+[ext_resource type="Script" uid="uid://tjamrj0dhry0" path="res://assets/UI/statistics.gd" id="10_q3egu"]
+
+[ext_resource type="PackedScene" uid="uid://bhg5ggm4o1b5q" path="res://assets/UI/magic_screen.tscn" id="12_6dfwe"]
+[ext_resource type="PackedScene" uid="uid://bjgqllkbeqd7u" path="res://assets/UI/casting_screen.tscn" id="13_hdqmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mf6f"]
+atlas = ExtResource("9_u7nva")
+region = Rect2(0, 0, 16, 24)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ManaBar" parent="." instance=ExtResource("1_yjxor")]
+offset_left = 64.0
+offset_top = 104.0
+offset_right = 631.0
+offset_bottom = 155.0
+
+[node name="HealthBar" parent="." instance=ExtResource("1_513jq")]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 790.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item Pickup" type="GridContainer" parent="."]
+offset_left = -1.0
+offset_top = 168.0
+offset_right = 360.0
+offset_bottom = 1075.0
+script = ExtResource("2_3ojmm")
+
+[node name="DeathScreen" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.18, 0.18, 0.490196)
+script = ExtResource("2_4jl5f")
+
+[node name="Button" type="Button" parent="DeathScreen"]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 476.0
+offset_right = 1063.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 43
+text = "Respawn"
+icon_alignment = 1
+
+[node name="InventoryScreen" parent="." instance=ExtResource("3_anldx")]
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -3.0
+offset_top = 1045.0
+offset_right = 213.0
+offset_bottom = 1085.0
+theme_override_font_sizes/normal_font_size = 25
+text = "FPS"
+script = ExtResource("5_5iaa6")
+
+[node name="Equipment" parent="." instance=ExtResource("6_f3ofk")]
+visible = false
+
+[node name="Pause Menu" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+color = Color(1, 0.635294, 1, 0.439216)
+script = ExtResource("6_whlxp")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Pause Menu"]
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 173.0
+offset_right = 1358.0
+offset_bottom = 640.0
+texture = SubResource("AtlasTexture_0mf6f")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Inventory" type="Button" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.329167
+anchor_top = -0.234259
+anchor_right = -0.117188
+anchor_bottom = -0.191667
+offset_left = 810.0
+offset_top = 419.0
+offset_right = 1113.0
+offset_bottom = 483.0
+pivot_offset = Vector2(152, 32)
+theme_override_font_sizes/font_size = 34
+text = "Inventory"
+metadata/_edit_use_anchors_ = true
+
+[node name="Magic" type="Button" parent="Pause Menu"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.233333
+anchor_top = -0.162963
+anchor_right = -0.233333
+anchor_bottom = -0.162963
+offset_left = 785.999
+offset_top = 533.0
+offset_right = 1089.0
+offset_bottom = 600.0
+pivot_offset = Vector2(152, 32)
+theme_override_font_sizes/font_size = 34
+text = "Magic"
+
+[node name="Equipment" type="Button" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.328125
+anchor_top = -0.206481
+anchor_right = -0.122396
+anchor_bottom = -0.174074
+offset_left = 808.0
+offset_top = 579.0
+offset_right = 1123.0
+offset_bottom = 654.0
+pivot_offset = Vector2(152, 32)
+theme_override_font_sizes/font_size = 34
+text = "Equipment
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Map" type="Button" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.233333
+anchor_top = -0.162963
+anchor_right = -0.233333
+anchor_bottom = -0.162963
+offset_left = 625.999
+offset_top = 912.0
+offset_right = 1331.0
+offset_bottom = 1013.0
+pivot_offset = Vector2(152, 32)
+theme_override_font_sizes/font_size = 34
+text = "Map"
+
+[node name="Quests" type="Button" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.233333
+anchor_top = -0.162963
+anchor_right = -0.233333
+anchor_bottom = -0.162963
+offset_left = 625.999
+offset_top = 722.0
+offset_right = 1336.0
+offset_bottom = 832.0
+pivot_offset = Vector2(152, 32)
+theme_override_font_sizes/font_size = 34
+text = "Quests"
+
+[node name="Settings" type="Button" parent="Pause Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.233333
+anchor_top = -0.162963
+anchor_right = -0.233333
+anchor_bottom = -0.162963
+offset_left = 625.999
+offset_top = 1102.0
+offset_right = 1336.0
+offset_bottom = 1212.0
+pivot_offset = Vector2(152, 32)
+theme_override_font_sizes/font_size = 34
+text = "Settings
+"
+
+[node name="Statistics" type="Control" parent="Pause Menu"]
+anchors_preset = 0
+offset_left = 1359.0
+offset_top = 159.0
+offset_right = 1359.0
+offset_bottom = 159.0
+script = ExtResource("10_q3egu")
+
+[node name="Stats" type="RichTextLabel" parent="Pause Menu/Statistics"]
+layout_mode = 0
+offset_right = 560.0
+offset_bottom = 501.0
+theme_override_font_sizes/normal_font_size = 55
+text = "Level 20
+Hp: 40/40
+Mp: 40/40
+$ 0.00
+Current Weapon:
+Violin"
+
+[node name="Stats2" type="RichTextLabel" parent="Pause Menu/Statistics"]
+layout_mode = 0
+offset_left = -294.0
+offset_top = 506.0
+offset_right = 288.0
+offset_bottom = 764.0
+theme_override_font_sizes/normal_font_size = 40
+text = "ATC: 
+DEF:
+MAG:
+SPD:"
+
+[node name="Stats3" type="RichTextLabel" parent="Pause Menu/Statistics"]
+layout_mode = 0
+offset_left = -324.0
+offset_top = 737.0
+offset_right = 421.0
+offset_bottom = 893.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Current Quest:
+Work on the game. "
+
+[node name="TillLevel" type="RichTextLabel" parent="Pause Menu/Statistics"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 64.0
+offset_right = 278.0
+offset_bottom = 94.0
+theme_override_font_sizes/normal_font_size = 21
+text = "Till 21: 183 XP"
+
+[node name="ColorRect" type="ColorRect" parent="Pause Menu"]
+layout_mode = 0
+offset_left = 967.0
+offset_top = 228.0
+offset_right = 974.0
+offset_bottom = 990.0
+color = Color(0.26, 0.1638, 0.26, 1)
+
+[node name="CharacterDiologueBox" parent="." instance=ExtResource("8_bbrbj")]
+visible = false
+
+[node name="MagicScreen" parent="." instance=ExtResource("12_6dfwe")]
+visible = false
+
+[node name="DirectionalCastingScreen" parent="." instance=ExtResource("13_hdqmw")]
+
+[connection signal="pressed" from="DeathScreen/Button" to="DeathScreen" method="_on_button_pressed"]
+[connection signal="pressed" from="Pause Menu/Inventory" to="Pause Menu" method="_on_inventory_pressed"]
+[connection signal="pressed" from="Pause Menu/Equipment" to="Pause Menu" method="_on_equipment_pressed"]

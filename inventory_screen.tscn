@@ -1,0 +1,153 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctke8s4kwobrv"]
+
+[ext_resource type="Texture2D" uid="uid://bsm7syveixf1i" path="res://assets/items/Food/Bread alt.png" id="1_c77xt"]
+[ext_resource type="Script" uid="uid://chkujbuxhfoxy" path="res://assets/UI/inventoryScreen.gd" id="1_qffuu"]
+[ext_resource type="Script" uid="uid://grh3685y12db" path="res://assets/UI/inventoryGrid.gd" id="2_wv7f0"]
+[ext_resource type="PackedScene" uid="uid://cb4332ajw02jb" path="res://assets/UI/item_slot.tscn" id="3_pgy5m"]
+
+[node name="InventoryScreen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.472025, 0.472025, 0.472025, 0.490196)
+script = ExtResource("1_qffuu")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_direction = 2
+layout_mode = 0
+offset_left = 104.0
+offset_top = 296.0
+offset_right = 1198.0
+offset_bottom = 872.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 8
+script = ExtResource("2_wv7f0")
+
+[node name="ItemSlot" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot4" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot5" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot6" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot7" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot8" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot9" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot10" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot11" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot12" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot13" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot14" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot15" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot16" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot17" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot18" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot19" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot20" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot21" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot22" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot23" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot24" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot25" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot26" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot27" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot28" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot29" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot30" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot31" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="ItemSlot32" parent="GridContainer" instance=ExtResource("3_pgy5m")]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1328.0
+offset_top = 712.0
+offset_right = 1778.0
+offset_bottom = 841.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]This is an item[/center]"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1328.0
+offset_top = 192.0
+offset_right = 1778.0
+offset_bottom = 642.0
+texture = ExtResource("1_c77xt")
+stretch_mode = 4
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1328.0
+offset_top = 801.0
+offset_right = 1778.0
+offset_bottom = 930.0
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[center]Description of said item[/center]
+"
